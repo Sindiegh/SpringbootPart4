@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.7.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.SpringBoot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.security:spring-security-test'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+		implementation 'org.springframework.ws:spring-ws-core'
+		compile group: 'com.sun.xml.ws', name: 'jaxws-rt', version: '2.3.0'
+		compile('javax.xml.bind:jaxb-api:2.3.0')
+		compile('javax.activation:activation:1.1')
+		compile('org.glassfish.jaxb:jaxb-runtime:2.3.0')
+
+
+		compile('javax.xml.bind:jaxb-api:2.3.0')
+		compile('javax.activation:activation:1.1')
+		compile('org.glassfish.jaxb:jaxb-runtime:2.3.0')
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+}
