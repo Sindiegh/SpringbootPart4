@@ -1,7 +1,6 @@
 package com.SpringBoot.SpringBootPart1.service;
 
 import com.SpringBoot.SpringBootPart1.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
@@ -9,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Collections;
 
 public class ConsumeWebService {
-    @Autowired
+
     RestTemplate restTemplate = new RestTemplate();
 
     @RequestMapping(value = "/v3")
